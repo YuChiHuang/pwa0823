@@ -1,0 +1,19 @@
+{
+  "name": "pwa test",
+  "short_name": "PT",
+  "icons": [{
+    "src": "/images/ico.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "/images/ico.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#FAFAFA",
+  "theme_color": "#6387F5"
+}
