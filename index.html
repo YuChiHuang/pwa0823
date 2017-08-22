@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">  
+    <title>PWA Demo</title>
+</head>
+<body>
+    <p> Registered USER </p>
+    <ul id="list"></ul>
+    <script>
+            // 註冊 Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+
+        const list = document.getElementById('list');
+        // 接著發送 request
+        fetch('http://localhost:3000/user')
+        .then(res => {
+            return res.json();
+        })
+        .then(json => {
+            list.innerHTML = json
+                            .map(item => `<li>${item.name}</li>`)
+                            .join('');
+        })
+    </script>
+    <img src="./images/img01.jpg" alt=""/>
+</body>
+</html>
